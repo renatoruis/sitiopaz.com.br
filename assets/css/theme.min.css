@@ -38108,3 +38108,13 @@ a.pswp__share--download:hover {
 		padding-right: 3rem
 	}
 }
+
+
+.formFooter {
+	display: none !important;
+}
+
+.form-all {
+	background-color: #f3f3fe !important;
+	box-shadow: none !important;
+}
