@@ -1,364 +1,645 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="pt-BR">
    <head>
-      <meta charset=utf-8>
-      <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-      <meta name=description content="Sitio Paz">
-      <meta name=keywords content="Sítio, Igreja, Encontros, Eventos">
-      <meta name=author content="Renato Ruis">
-      <title>Sitio Paz</title>
-      <link rel=icon type=image/png sizes=32x32 href=assets/images/icons/favicons/favicon-32x32.png>
-      <link href=assets/css/theme.min.css rel=stylesheet>
-
-   </head>
-   <body>
-
-
-    <header class="navbar navbar-expand-lg align-items-center w-100 position-absolute z-index-10 navbar-light">
-      <div class="position-relative container-fluid">
-         <a href=#content class="skip-to-main sr-only-focusable" role=button>Skip to main content</a>
-         <a class="navbar-brand mr-auto" href=./index.html aria-label="Click to go back to Homepage">
-          <img  src="assets/images/logo-500.png" width="50%">
-         </a>
-
-      </div>
-   </header>
-
-
-
-
-      <main>
-
-        <section class="mb-6 mb-lg-7" id=content>
-          <div class="container-fluid px-0">
-             <div class="row no-gutters align-items-center">
-                <div class=col-md data-aos=fade-right>
-                   <div class="img-shifted shift-left vh-100">
-                      <div class="bg-image bg-cover bg-position-top-center" style="background-image: url(assets/images/bg-home.jpg);">
-                        <div class=".d-md-none .d-lg-block .d-lg-none .d-xl-block seta-mobile">
-                              <a href="#maismobile"><img src="assets/images/seta.gif">
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sítio Paz - Local perfeito para eventos religiosos, casamentos, retiros e confraternizações em Juquitiba. Capacidade para 140 pessoas com estrutura completa.">
+    <meta name="keywords" content="sítio para eventos, casamentos, retiros espirituais, acampamentos, batismo, Juquitiba, eventos religiosos, confraternização, day use">
+    <meta name="author" content="Sítio Paz">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sítio Paz - Seu lugar para eventos especiais em Juquitiba">
+    <meta property="og:description" content="Local perfeito para eventos religiosos, casamentos, retiros e confraternizações. Capacidade para 140 pessoas com estrutura completa a 78km de São Paulo.">
+    <meta property="og:image" content="assets/images/bg-home.jpg">
+    <meta property="og:url" content="https://sitiopaz.com.br">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sítio Paz - Seu lugar para eventos especiais">
+    <meta name="twitter:description" content="Local perfeito para eventos religiosos, casamentos, retiros e confraternizações em Juquitiba.">
+    <meta name="twitter:image" content="assets/images/bg-home.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sitiopaz.com.br">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" href="assets/images/favicon.png">
+    
+    <!-- Title -->
+    <title>Sítio Paz - Eventos Religiosos e Casamentos em Juquitiba | Local para Retiros</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e'
+                        },
+                        secondary: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for animations and special styles -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease-out forwards;
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hero background with overlay */
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url('assets/images/bg-home.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Gallery styles */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #0ea5e9;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284c7;
+        }
+    </style>
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Sítio Paz",
+        "description": "Local perfeito para eventos religiosos, casamentos, retiros e confraternizações em Juquitiba",
+        "url": "https://sitiopaz.com.br",
+        "telephone": "+55-11-xxxx-xxxx",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Juquitiba",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-23.933",
+            "longitude": "-47.067"
+        },
+        "openingHours": "Mo-Su 08:00-18:00",
+        "priceRange": "$$",
+        "amenityFeature": [
+            "Alojamentos para 140 pessoas",
+            "Salão para 250 pessoas",
+            "Campo de futebol",
+            "Quadra de vôlei",
+            "Piscina",
+            "3 Lagos naturais"
+        ]
+    }
+    </script>
+</head>
+<body class="font-sans antialiased scroll-smooth">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-2">
+                        <img src="assets/images/logo-azul.png" alt="Sítio Paz Logo" class="h-10 md:h-12 w-auto">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Início</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Sobre</a>
+                    <a href="#galeria" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Galeria</a>
+                    <a href="#eventos" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">Eventos</a>
+                    <a href="#contato" class="bg-primary-600 text-white px-6 py-2 rounded-full hover:bg-primary-700 transition-colors duration-200">Contato</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary-600 transition-colors duration-200">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
                         </div>
                      </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#inicio" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200">Início</a>
+                <a href="#sobre" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200">Sobre</a>
+                <a href="#galeria" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200">Galeria</a>
+                <a href="#eventos" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200">Eventos</a>
+                <a href="#contato" class="block px-3 py-2 text-gray-700 hover:text-primary-600 transition-colors duration-200">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center hero-bg">
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white animate-fadeInUp">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Aqui é o <span class="text-primary-400">seu lugar</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                        Localizado em Juquitiba, o local perfeito para seus eventos especiais e momentos de paz
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#sobre" class="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-700 transition-all duration-200 transform hover:scale-105">
+                            Saiba mais
+                            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                        <a href="#contato" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-gray-900 transition-all duration-200">
+                            Entre em contato
+                        </a>
                    </div>
                 </div>
-                <div  class="col-md-6 vh-100 d-flex flex-column" >
-                   <div class="px-5 px-lg-7 px-xl-9 mt-auto">
-                    <!-- <img  src="assets/images/logo-azul.png" width="10%"> -->
-                      <h1 id="maismobile" class="display-3 mb-6">aqui é o <br>seu lugar</h1>
-                      <a href="#mais" class="btn btn-secondary text-uppercase d-inline-flex align-items-center">
-                         Saiba mais
-                         <svg width=16 height=16 class=ml-2 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                            <title>arrow-right-1</title>
-                            <path d=M19.5,12a2.3,2.3,0,0,1-.78,1.729L7.568,23.54a1.847,1.847,0,0,1-2.439-2.773l9.752-8.579a.25.25,0,0,0,0-.376L5.129,3.233A1.847,1.847,0,0,1,7.568.46l11.148,9.808A2.31,2.31,0,0,1,19.5,12Z></path>
+                
+                <!-- Scroll indicator -->
+                <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                    <a href="#sobre" class="text-white">
+                        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                          </svg>
                       </a>
-                   </div>
-                   <div class="bg-light px-5 px-lg-7 px-xl-9 py-5 mt-auto">
-                      <p class="font-size-3 mb-0"><span class=font-italic>“Lugar de experiências incriveis”</span><br>R. Ruis</p>
-                   </div>
                 </div>
              </div>
           </div>
        </section>
 
-
-
-
-         <section id="mais" class="py-6 py-lg-7">
-            <div class=container>
-               <div class="row justify-content-center">
-                  <div class=col-md-11>
-                     <div class=row>
-                        <div class="col-12 text-center">
-                           <h2>Sobre o sítio Paz</h2>
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Sobre o Sítio Paz</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-slideInRight">
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Localizado em Juquitiba a 78km da cidade de São Paulo, o Sítio Paz é perfeito para desfrutar de momentos especiais e tranquilidade. Com o nosso amplo espaço, oferecemos uma estrutura completa para você poder realizar o seu evento com qualidade.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        O Sítio Paz tem capacidade para receber centenas de pessoas e acomodá-las com o maior conforto possível. Temos 6 alojamentos com capacidade para 140 pessoas, chuveiro a gás, salão de reunião para 250 pessoas, amplo refeitório e 3 lagos naturais.
+                    </p>
+                    
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="bg-primary-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                                <span class="text-sm font-semibold text-gray-700">Capacidade</span>
+                            </div>
+                            <p class="text-2xl font-bold text-primary-600">140+</p>
+                            <p class="text-sm text-gray-600">Pessoas</p>
                         </div>
-                        <div class=col-lg-6 data-aos=fade-right>
-                           <p class="mb-4 mb-lg-6">
-                            Localizado em Juquitiba a 78km da cidade de São Paulo, o Sítio Paz é perfeito para desfrutar de momentos especiais e tranquilidade. Com o nosso amplo espaço, oferecemos uma estrutura completa para você poder realizar o seu evento com qualidade.
-                            <br> <br>
-                            O Sítio Paz tem capacidade para receber centenas de pessoas e acomodá-las com o maior conforto possível. Temos 6 alojamentos com capacidade para 140 pessoas, chuveiro a gás, salão de reunião para 250 pessoas, amplo refeitório e 3 lagos naturais.
-
-
-                          </p>
+                        
+                        <div class="bg-primary-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                                <span class="text-sm font-semibold text-gray-700">Alojamentos</span>
+                            </div>
+                            <p class="text-2xl font-bold text-primary-600">6</p>
+                            <p class="text-sm text-gray-600">Unidades</p>
                         </div>
-                        <div class=col-lg-6 data-aos=fade-left>
-                           <p>
-                            O ambiente é ideal para Encontro com Deus, Acampamento, Retiro, Batismo, Day Use, Casamentos e Confraternização.
-                          <br><br>
-                          Para o entretenimento temos campo de futebol, quadra de vôlei, espaço de jogos, piscina e trilha.
-                          <br><br>
-                          Gostaria de reservar nosso espaço? Preencha o formulário para receber um orçamento.
-                          <br><br>
-                          <a href=#contato class="btn btn-secondary">
-                            Contato
-                            <svg width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                               <title>arrow-right-1</title>
-                               <path d=M19.5,12a2.3,2.3,0,0,1-.78,1.729L7.568,23.54a1.847,1.847,0,0,1-2.439-2.773l9.752-8.579a.25.25,0,0,0,0-.376L5.129,3.233A1.847,1.847,0,0,1,7.568.46l11.148,9.808A2.31,2.31,0,0,1,19.5,12Z></path>
+                        
+                        <div class="bg-primary-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                                </svg>
+                                <span class="text-sm font-semibold text-gray-700">Salão</span>
+                            </div>
+                            <p class="text-2xl font-bold text-primary-600">250</p>
+                            <p class="text-sm text-gray-600">Pessoas</p>
+                        </div>
+                        
+                        <div class="bg-primary-50 p-4 rounded-lg">
+                            <div class="flex items-center mb-2">
+                                <svg class="w-6 h-6 text-primary-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
-                          </a>
-                        </p>
+                                <span class="text-sm font-semibold text-gray-700">Lagos</span>
+                            </div>
+                            <p class="text-2xl font-bold text-primary-600">3</p>
+                            <p class="text-sm text-gray-600">Naturais</p>
                         </div>
                      </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-
-
-         <section class="py-6 mb-6 py-lg-7 mb-lg-7 bg-layer-light-top-100-left-50 position-relative overflow-hidden">
-            <div class=container>
-               <div class=row>
-                  <div class=col>
-                     <h2>Últimas fotos</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="container-fluid px-0">
-               <div class=row>
-                  <div class=col>
-                     <div class="gallery swiper container">
-                        <div class="swiper-container swiper-scaled overflow-visible" data-options='{"slidesPerView": 1, "spaceBetween": 0, "breakpoints": {"768": {"slidesPerView": 2}, "992": {"slidesPerView": 3}}}'>
-                           <div class=swiper-wrapper>
-
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/01.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/01.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/02.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/02.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/03.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/03.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/04.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/04.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/05.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/05.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/06.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/06.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/07.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/07.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/08.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/08.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/09.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/09.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-                              <div class=" swiper-slide">
-                                 <figure>
-                                    <a href="assets/images/galeria/10.jpg" data-size="800x800" title="Image 1">
-                                        <img src="assets/images/galeria/10.jpg" alt=photo-01 class="img-fluid shadow" width=400>
-                                    </a>
-                                </figure>
-                              </div>
-
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="container mt-4">
-               <div class="d-flex justify-content-start">
-                  <div class="swiper-btn swiper-btn-prev" tabindex=0 role=button aria-label="Previous slide"></div>
-                  <div class="swiper-btn swiper-btn-next ml-3" tabindex=0 role=button aria-label="Next slide"></div>
-               </div>
-            </div>
-         </section>
-
-
-
-         <section class="py-6 py-lg-7">
-            <div class=container>
-               <div class=row>
-                  <div class=col>
-                     <div class="row no-gutters">
-                        <div class="col-12 text-center">
-                           <h2>Testemunhos</h2>
-                        </div>
-                        <div class="col-lg-7 pr-lg-6 position-relative z-index-1" data-aos=fade-up>
-                           <div class="card shadow mb-5">
-                              <div class="card-body p-4 p-md-5 px-lg-7 py-lg-6">
-                                 <blockquote class="blockquote mb-0">
-                                    <h3 class="h4 text-body">Minha experiência foi incrível, porque é um lugar que transmite muita paz, cercado de muito verde e também muita tranquilidade.</h3>
-                                    <p class="font-size-6 text-gray font-italic mb-0">
-                                      Eu senti profundamente a presença de Deus alí.
-                                      Outra coisa muito importante para destacar é a acessibilidade ao local, próximo do asfalto e a chegada até o sítio é bem tranquila.
-                                      A acomodação é bastante limpa e arejada
-                                                                          </p>
-                                    <footer class="blockquote-footer font-size-6 text-right text-gray font-weight-bold">Pr. Gilvane Batista</footer>
-                                 </blockquote>
-                              </div>
-                           </div>
-
-                        </div>
-                        <div class="col-lg-6 ml-lg-n8 mt-lg-6" data-aos=fade-up data-aos-delay=50>
-                           <div class="card bg-light shadow">
-                              <div class="card-body p-4 p-md-5 px-lg-7 py-lg-6">
-                                 <blockquote class="blockquote mb-0">
-                                    <h3 class="h4 text-body">Participei de diversos eventos no sítio paz e uma das coisas que eu mais gosto é a natureza. Traz muita paz e refrigério.</h3>
-                                    <p class="font-size-6 text-gray font-italic mb-0">Os cômodos e salas são todas próximas e tem tudo o que é necessário para fazer um bom evento.</p>
-                                    <footer class="blockquote-footer font-size-6 text-right text-gray font-weight-bold">Isabely Bitencourt</footer>
-                                 </blockquote>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="py-6 mb-6 py-lg-7 mb-lg-7">
-            <div class="container-fluid px-lg-0">
-               <div class="row align-items-center">
-                  <div class="col-lg-6 mb-5 mb-lg-0">
-                     <div class="py-12 py-lg-15">
-                        <div class="bg-image bg-cover mr-lg-5" style="background-image: url(assets/images/galeria/36.jpg);"></div>
-                     </div>
-                  </div>
-                  <div class=col-lg-4>
-                     <h3 class=h2>Eventos que hospedamos</h3>
-                     <!-- <p>Suspendisse rhoncus dolor at lorem laoreet vehicula. Vestibulum volutpat faucibus massa, et consequat leo finibus non</p> -->
-                     <div class=d-flex data-aos=fade-left>
-                        <div class="d-flex align-items-start mt-1">
-                           <svg class=fill-secondary width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                              <title>check</title>
-                              <path d=M23.146,5.4,20.354,2.6a.5.5,0,0,0-.708,0L7.854,14.4a.5.5,0,0,1-.708,0L4.354,11.6a.5.5,0,0,0-.708,0L.854,14.4a.5.5,0,0,0,0,.707L7.146,21.4a.5.5,0,0,0,.708,0L23.146,6.1A.5.5,0,0,0,23.146,5.4Z />
-                           </svg>
-                        </div>
-                        <div class=ml-2>
-                           <p class="font-size-5 mb-3">Casamentos</p>
-                        </div>
-                     </div>
-                     <div class=d-flex data-aos=fade-left data-aos-delay=100>
-                        <div class="d-flex align-items-start mt-1">
-                           <svg class=fill-secondary width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                              <title>check</title>
-                              <path d=M23.146,5.4,20.354,2.6a.5.5,0,0,0-.708,0L7.854,14.4a.5.5,0,0,1-.708,0L4.354,11.6a.5.5,0,0,0-.708,0L.854,14.4a.5.5,0,0,0,0,.707L7.146,21.4a.5.5,0,0,0,.708,0L23.146,6.1A.5.5,0,0,0,23.146,5.4Z />
-                           </svg>
-                        </div>
-                        <div class=ml-2>
-                           <p class="font-size-5 mb-3">Retiros Espirituais</p>
-                        </div>
-                     </div>
-                     <div class=d-flex data-aos=fade-left data-aos-delay=200>
-                        <div class="d-flex align-items-start mt-1">
-                           <svg class=fill-secondary width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                              <title>check</title>
-                              <path d=M23.146,5.4,20.354,2.6a.5.5,0,0,0-.708,0L7.854,14.4a.5.5,0,0,1-.708,0L4.354,11.6a.5.5,0,0,0-.708,0L.854,14.4a.5.5,0,0,0,0,.707L7.146,21.4a.5.5,0,0,0,.708,0L23.146,6.1A.5.5,0,0,0,23.146,5.4Z />
-                           </svg>
-                        </div>
-                        <div class=ml-2>
-                           <p class="font-size-5 mb-3">Acampamentos</p>
-                        </div>
-                     </div>
-                     <div class=d-flex data-aos=fade-left data-aos-delay=300>
-                        <div class="d-flex align-items-start mt-1">
-                           <svg class=fill-secondary width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                              <title>check</title>
-                              <path d=M23.146,5.4,20.354,2.6a.5.5,0,0,0-.708,0L7.854,14.4a.5.5,0,0,1-.708,0L4.354,11.6a.5.5,0,0,0-.708,0L.854,14.4a.5.5,0,0,0,0,.707L7.146,21.4a.5.5,0,0,0,.708,0L23.146,6.1A.5.5,0,0,0,23.146,5.4Z />
-                           </svg>
-                        </div>
-                        <div class=ml-2>
-                           <p class="font-size-5 mb-3">Day Use</p>
-                        </div>
-                     </div>
-                     <div class=d-flex data-aos=fade-left data-aos-delay=300>
-                        <div class="d-flex align-items-start mt-1">
-                           <svg class=fill-secondary width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                              <title>check</title>
-                              <path d=M23.146,5.4,20.354,2.6a.5.5,0,0,0-.708,0L7.854,14.4a.5.5,0,0,1-.708,0L4.354,11.6a.5.5,0,0,0-.708,0L.854,14.4a.5.5,0,0,0,0,.707L7.146,21.4a.5.5,0,0,0,.708,0L23.146,6.1A.5.5,0,0,0,23.146,5.4Z />
-                           </svg>
-                        </div>
-                        <div class=ml-2>
-                           <p class="font-size-5 mb-3">Confraternizações</p>
-                        </div>
-                     </div>
-                     <div class=d-flex data-aos=fade-left data-aos-delay=300>
-                        <div class="d-flex align-items-start mt-1">
-                           <svg class=fill-secondary width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                              <title>check</title>
-                              <path d=M23.146,5.4,20.354,2.6a.5.5,0,0,0-.708,0L7.854,14.4a.5.5,0,0,1-.708,0L4.354,11.6a.5.5,0,0,0-.708,0L.854,14.4a.5.5,0,0,0,0,.707L7.146,21.4a.5.5,0,0,0,.708,0L23.146,6.1A.5.5,0,0,0,23.146,5.4Z />
-                           </svg>
-                        </div>
-                        <div class=ml-2>
-                           <p class="font-size-5 mb-3">Batismos</p>
-                        </div>
-                     </div>
-                     <a href=# class="btn btn-secondary">
-                        Contato
-                        <svg width=16 height=16 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                           <title>arrow-right-1</title>
-                           <path d=M19.5,12a2.3,2.3,0,0,1-.78,1.729L7.568,23.54a1.847,1.847,0,0,1-2.439-2.773l9.752-8.579a.25.25,0,0,0,0-.376L5.129,3.233A1.847,1.847,0,0,1,7.568.46l11.148,9.808A2.31,2.31,0,0,1,19.5,12Z></path>
+                    
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        O ambiente é ideal para Encontro com Deus, Acampamento, Retiro, Batismo, Day Use, Casamentos e Confraternização. Para o entretenimento temos campo de futebol, quadra de vôlei, espaço de jogos, piscina e trilha.
+                    </p>
+                    
+                    <a href="#contato" class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-full hover:bg-primary-700 transition-all duration-200 transform hover:scale-105">
+                        Solicitar Orçamento
+                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
-                      </a>
+                    </a>
+                </div>
+                
+                <div class="animate-fadeInUp">
+                    <div class="relative">
+                        <img src="assets/images/galeria/P1069223.jpg" alt="Vista do Sítio Paz" class="rounded-2xl shadow-2xl w-full">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+                     </div>
                   </div>
                </div>
             </div>
          </section>
 
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Últimas Fotos</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-4"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Veja alguns momentos especiais registrados em nosso espaço</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1068905.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1068905.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                  </div>
+               </div>
+            </div>
+                
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1068916.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1068916.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                              </div>
+                              </div>
+                              </div>
+                
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1068943.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1068943.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                              </div>
+                              </div>
+                              </div>
+                
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1068967.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1068967.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                              </div>
+                              </div>
+                              </div>
 
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1068970.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1068970.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                        </div>
+                              </div>
+                           </div>
+                
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1069010.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1069010.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                        </div>
+                     </div>
+                  </div>
+                
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1069052.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1069052.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+               </div>
+               </div>
+            </div>
+                
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1069121.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1069121.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                        </div>
+                              </div>
+                           </div>
 
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1069146.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1069146.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                        </div>
+                              </div>
+                           </div>
+                
+                <div class="gallery-item group cursor-pointer" onclick="openModal('assets/images/galeria/P1069223.jpg')">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg">
+                        <img src="assets/images/galeria/P1069223.jpg" alt="Galeria Sítio Paz" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
 
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Testemunhos</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-4"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">O que nossos visitantes dizem sobre suas experiências</p>
+                     </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                           </svg>
+                        </div>
+                        </div>
+                    <blockquote class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        "Minha experiência foi incrível, porque é um lugar que transmite muita paz, cercado de muito verde e também muita tranquilidade. Eu senti profundamente a presença de Deus ali. Outra coisa muito importante para destacar é a acessibilidade ao local, próximo do asfalto e a chegada até o sítio é bem tranquila."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                           </svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Pr. Gilvane Batista</p>
+                            <p class="text-gray-600">Pastor</p>
+                        </div>
+                     </div>
+                </div>
+                
+                <div class="bg-primary-50 rounded-2xl shadow-xl p-8 border border-primary-100">
+                    <div class="flex items-center mb-6">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                            </svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.719c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                           </svg>
+                        </div>
+                        </div>
+                    <blockquote class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        "Participei de diversos eventos no sítio paz e uma das coisas que eu mais gosto é a natureza. Traz muita paz e refrigério. Os cômodos e salas são todas próximas e tem tudo o que é necessário para fazer um bom evento."
+                    </blockquote>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                           </svg>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-gray-900">Isabely Bitencourt</p>
+                            <p class="text-gray-600">Participante</p>
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-         <section id="contato" class="py-6 mb-6 py-lg-7 mb-lg-7">
-          <div class="container-fluid px-lg-0">
-             <div class="row align-items-center">
+    <!-- Events Section -->
+    <section id="eventos" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Eventos que Hospedamos</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-4"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Oferecemos o ambiente ideal para diversos tipos de eventos especiais</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Casamentos</h3>
+                    <p class="text-gray-600">Celebre o seu dia especial em um ambiente único, cercado pela natureza e com toda infraestrutura necessária.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path>
+                           </svg>
+                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Retiros Espirituais</h3>
+                    <p class="text-gray-600">Ambiente tranquilo e propício para momentos de reflexão, oração e comunhão com Deus.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Acampamentos</h3>
+                    <p class="text-gray-600">Experiência completa de acampamento com segurança e comodidade para todas as idades.</p>
+                     </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                           </svg>
+                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Day Use</h3>
+                    <p class="text-gray-600">Aproveite um dia completo de lazer e descanso com acesso a todas as nossas instalações.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                        </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Confraternizações</h3>
+                    <p class="text-gray-600">Espaço ideal para reunir família, amigos ou equipes em momentos de celebração.</p>
+                     </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Batismos</h3>
+                    <p class="text-gray-600">Celebre este momento sagrado em nossos lagos naturais, em um ambiente sereno e especial.</p>
+                  </div>
+               </div>
+            </div>
+         </section>
 
-
-              <div class=col-lg-1>
-
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Entre em Contato</h2>
+                <div class="w-24 h-1 bg-primary-600 mx-auto mb-4"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Gostaria de reservar nosso espaço? Preencha o formulário para receber um orçamento personalizado</p>
               </div>
-                <div class=col-lg-5>
-
-
-
-                   <div class=d-flex data-aos=fade-left>
-
-                      <div class="d-flex align-items-start mt-1">
-
-
-<!-- FORMULATIRIO -->
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <!-- Contact Form -->
+                <div class="bg-gray-50 rounded-2xl p-8">
 <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
 <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.32470" type="text/javascript"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.js"></script>
@@ -366,248 +647,303 @@
 <script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.32470" type="text/javascript"></script>
 <script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.32470" type="text/javascript"></script>
 
-<link type="text/css" rel="stylesheet" href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5f7ed99c2c2c7240ba580251"/>
-<link type="text/css" rel="stylesheet" href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.32470" />
-<link type="text/css" rel="stylesheet" href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.32470" />
-<link href=assets/css/form.css rel=stylesheet>
-
-
-<form class="jotform-form" action="https://submit.jotform.com/submit/220966462881061/" method="post" name="form_220966462881061" id="220966462881061" accept-charset="utf-8" autocomplete="on">
-
+                    <form class="jotform-form space-y-6" action="https://submit.jotform.com/submit/220966462881061/" method="post" name="form_220966462881061" id="220966462881061" accept-charset="utf-8" autocomplete="on">
   <input type="hidden" name="formID" value="220966462881061" />
   <input type="hidden" id="JWTContainer" value="" />
   <input type="hidden" id="cardinalOrderNumber" value="" />
-  <div role="main" class="form-all">
-
-    <ul class="form-section page-section">
-      <h2 class="display-4 mb-6" style="padding-left: 3%; color: #2c3345">Contato</h2>
-      <li class="form-line" data-type="control_textbox" id="id_7">
-        <label class="form-label form-label-top form-label-auto" id="label_7" for="input_7"> Nome </label>
-        <div id="cid_7" class="form-input-wide" data-layout="half">
-          <input type="text" id="input_7" name="q7_nome" data-type="input-textbox" class="form-textbox" data-defaultvalue="" style="width:310px" size="310" value="" data-component="textbox" aria-labelledby="label_7" />
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="input_7" class="block text-sm font-medium text-gray-700 mb-2">Nome</label>
+                                <input type="text" id="input_7" name="q7_nome" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200" required>
         </div>
-      </li>
-      <li class="form-line form-line-column form-col-1" data-type="control_email" id="id_4">
-        <label class="form-label form-label-top" id="label_4" for="input_4"> E-mail </label>
-        <div id="cid_4" class="form-input-wide" data-layout="half">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="email" id="input_4" name="q4_email" class="form-textbox validate[Email, disallowFree]" data-defaultvalue="" style="width:289px" size="289" value="" data-component="email" aria-labelledby="label_4 sublabel_input_4" />
-            <label class="form-sub-label" for="input_4" id="sublabel_input_4" style="min-height:13px" aria-hidden="false"> exemplo@exemplo.com </label>
-          </span>
-        </div>
-      </li>
-      <li class="form-line form-line-column form-col-2" data-type="control_phone" id="id_5">
-        <label class="form-label form-label-top" id="label_5" for="input_5_full"> Celular </label>
-        <div id="cid_5" class="form-input-wide" data-layout="half">
-          <span class="form-sub-label-container" style="vertical-align:top">
-            <input type="tel" id="input_5_full" name="q5_celular[full]" data-type="mask-number" class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue="" autoComplete="section-input_5 tel-national" style="width:310px" data-masked="true" value="" placeholder="(00) 0000-0000" data-component="phone" aria-labelledby="label_5" />
-            <label class="form-sub-label is-empty" for="input_5_full" id="sublabel_5_masked" style="min-height:13px" aria-hidden="false">  </label>
-          </span>
-        </div>
-      </li>
-      <li class="form-line form-line-column form-col-3" data-type="control_button" id="id_2">
-        <div id="cid_2" class="form-input-wide" data-layout="full">
-          <div data-align="left" class="form-buttons-wrapper form-buttons-left   jsTest-button-wrapperField">
-            <button id="input_2" type="submit" class="form-submit-button form-submit-button-big_white submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
-              Enviar
-            </button>
+                            
+                            <div>
+                                <label for="input_5_full" class="block text-sm font-medium text-gray-700 mb-2">Celular</label>
+                                <input type="tel" id="input_5_full" name="q5_celular[full]" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200" placeholder="(00) 0000-0000" required>
           </div>
         </div>
-      </li>
-      <li class="form-line form-line-column form-col-4 jf-required" data-type="control_captcha" id="id_6">
-        <label class="form-label form-label-top" id="label_6" for="input_6">
-          <span class="form-required">
-            *
-          </span>
-        </label>
-        <div id="cid_6" class="form-input-wide jf-required" data-layout="full">
-          <section data-wrapper-react="true" data-invisible-captcha="true">
-            <div id="recaptcha_input_6" data-component="recaptcha" data-callback="recaptchaCallbackinput_6" data-size="invisible" data-badge="inline" data-expired-callback="recaptchaExpiredCallbackinput_6">
+                        
+                        <div>
+                            <label for="input_4" class="block text-sm font-medium text-gray-700 mb-2">E-mail</label>
+                            <input type="email" id="input_4" name="q4_email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200" placeholder="exemplo@exemplo.com" required>
             </div>
-            <input type="hidden" id="input_6" class="hidden " name="recaptcha_invisible" required="" />
-            <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=explicit&amp;onload=recaptchaLoadedinput_6"></script>
+                        
+                        <div class="hidden">
+                            <input type="hidden" id="input_6" class="hidden" name="recaptcha_invisible" required />
+                            <div id="recaptcha_input_6" data-component="recaptcha" data-callback="recaptchaCallbackinput_6" data-size="invisible" data-badge="inline" data-expired-callback="recaptchaExpiredCallbackinput_6"></div>
+                            <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?render=explicit&onload=recaptchaLoadedinput_6"></script>
             <script type="text/javascript">
-                    var recaptchaLoadedinput_6 = function()
-          {
-            window.grecaptcha.render($("recaptcha_input_6"), {
+                                var recaptchaLoadedinput_6 = function() {
+                                    window.grecaptcha.render(document.getElementById("recaptcha_input_6"), {
               sitekey: '6LcG3CgUAAAAAGOEEqiYhmrAm6mt3BDRhTrxWCKb',
             });
-            var grecaptchaBadge = document.querySelector('.grecaptcha-badge');
-            if (grecaptchaBadge)
-            {
-              grecaptchaBadge.style.boxShadow = 'gray 0px 0px 2px';
-            }
-          };
+                                };
 
-        /**
-         * Called when the reCaptcha verifies the user is human
-         * For invisible reCaptcha;
-         *   Submit event is stopped after validations and recaptcha is executed.
-         *   If a challenge is not displayed, this will be called right after grecaptcha.execute()
-         *   If a challenge is displayed, this will be called when the challenge is solved successfully
-         *   Submit is triggered to actually submit the form since it is stopped before.
-         */
-        var recaptchaCallbackinput_6 = function()
-          {
-            var isInvisibleReCaptcha = true;
-            var hiddenInput = $("input_6");
-            hiddenInput.setValue(1);
-            if (!isInvisibleReCaptcha)
-            {
-              if (hiddenInput.validateInput)
-              {
-                hiddenInput.validateInput();
-              }
-            }
-            else
-            {
-              triggerSubmit(hiddenInput.form)
-            }
+                                var recaptchaCallbackinput_6 = function() {
+                                    var hiddenInput = document.getElementById("input_6");
+                                    hiddenInput.value = 1;
+                                    triggerSubmit(hiddenInput.form);
 
-            function triggerSubmit(formElement)
-            {
+                                    function triggerSubmit(formElement) {
               var button = formElement.ownerDocument.createElement('input');
               button.style.display = 'none';
               button.type = 'submit';
               formElement.appendChild(button).click();
               formElement.removeChild(button);
             }
-          }
+                                };
 
-          // not really required for invisible recaptcha
-        var recaptchaExpiredCallbackinput_6 = function()
-          {
-            var hiddenInput = $("input_6");
-            hiddenInput.writeAttribute("value", false);
-            if (hiddenInput.validateInput)
-            {
-              hiddenInput.validateInput();
-            }
-          }
+                                var recaptchaExpiredCallbackinput_6 = function() {
+                                    var hiddenInput = document.getElementById("input_6");
+                                    hiddenInput.value = false;
+                                };
             </script>
-          </section>
         </div>
-      </li>
-      <li style="clear:both">
-      </li>
-      <li style="display:none">
-        Should be Empty:
-        <input type="text" name="website" value="" />
-      </li>
-    </ul>
-  </div>
-  <script>
-  JotForm.showJotFormPowered = "new_footer";
-  </script>
-  <script>
-  JotForm.poweredByText = "Criado com Jotform";
-  </script>
+                        
+                        <button type="submit" class="w-full bg-primary-600 text-white font-semibold py-4 px-6 rounded-lg hover:bg-primary-700 transition-all duration-200 transform hover:scale-105 focus:ring-4 focus:ring-primary-200">
+                            Enviar Mensagem
+                            <svg class="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                        </button>
+                        
   <input type="hidden" class="simple_spc" id="simple_spc" name="simple_spc" value="220966462881061" />
   <script type="text/javascript">
-  var all_spc = document.querySelectorAll("form[id='220966462881061'] .si" + "mple" + "_spc");
-for (var i = 0; i < all_spc.length; i++)
-{
+                            var all_spc = document.querySelectorAll("form[id='220966462881061'] .simple_spc");
+                            for (var i = 0; i < all_spc.length; i++) {
   all_spc[i].value = "220966462881061-220966462881061";
 }
   </script>
-  <div class="formFooter-heightMask">
+                        
+                        <div style="display:none">
+                            Should be Empty:
+                            <input type="text" name="website" value="" />
   </div>
-  <div class="formFooter f6 branding21">
-    <div class="formFooter-wrapper formFooter-leftSide">
-      <a href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=220966462881061&utm_content=jotform_logo&utm_campaign=powered_by_jotform_le" target="_blank" class="formFooter-logoLink"><img class="formFooter-logo" src="https://cdn.jotfor.ms/assets/img/logo2021/jotform-logo-white.svg" alt="Jotform Logo" style="height: 44px;"></a>
+                    </form>
     </div>
-    <div class="formFooter-wrapper formFooter-rightSide">
-      <span class="formFooter-text">
-        Now create your own Jotform - It's free!
-      </span>
-      <a class="formFooter-button" href="https://www.jotform.com/?utm_source=formfooter&utm_medium=banner&utm_term=220966462881061&utm_content=jotform_button&utm_campaign=powered_by_jotform_le" target="_blank">Create your own Jotform</a>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="relative">
+                        <img src="assets/images/mid.jpg" alt="Vista do Sítio Paz" class="rounded-2xl shadow-2xl w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h3 class="text-xl font-bold mb-2">Venha nos visitar!</h3>
+                            <p>Juquitiba - SP, a 78km de São Paulo</p>
     </div>
   </div>
-</form>
-<script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.32470"></script>
-<script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.32470"></script>
-
-<!-- FORMULARIO -->
-
+                    
+                    <div class="bg-primary-50 rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Informações de Contato</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Localização</p>
+                                    <p class="text-gray-600">Juquitiba - SP</p>
                       </div>
                    </div>
 
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Distância de SP</p>
+                                    <p class="text-gray-600">78 km do centro</p>
+                                </div>
                 </div>
 
-                <div class="col-lg-6 mb-5 mb-lg-0 hide-min">
-                  <div class="py-12 py-lg-15">
-                     <div class="bg-image bg-cover mr-lg-5" style="background-image: url(assets/images/mid.jpg);"></div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Capacidade</p>
+                                    <p class="text-gray-600">Até 250 pessoas</p>
+                                </div>
                   </div>
                </div>
 
+                        <div class="mt-8 p-4 bg-white rounded-lg">
+                            <p class="text-sm text-gray-600 italic text-center">
+                                "Lugar de experiências incríveis" - R. Ruis
+                            </p>
+                        </div>
+                    </div>
+                </div>
              </div>
           </div>
        </section>
 
-
-
-
-
-
-
-
-<!-- FORMULARIO DE CONTATO  -->
-          <section id="contato"class="py-6 mb-6 py-lg-7 mb-lg-7">
-
-
-
-
-
-      </main>
-      <footer class="bg-primary text-white small">
-         <div class="border-top border-gray py-3">
-            <div class=container>
-               <div class="row justify-content-between small">
-                  <div class=col-auto>Criado com carinho por: <a href=https://www.agenciamagnifict.com/ class=text-reset>Magnifict</a></div>
-                  <div class=col-auto>
-                     <a data-scroll href=# class="d-inline-block text-reset" title="Up to the top">
-                        <svg width=20 height=20 xmlns=http://www.w3.org/2000/svg viewBox="0 0 24 24">
-                           <title>arrow-button-up-1</title>
-                           <path d=M12,10.416a2.643,2.643,0,0,1,1.875.775l9.541,9.541a1.768,1.768,0,0,1-2.5,2.5l-8.739-8.739a.25.25,0,0,0-.354,0L3.084,23.232a1.768,1.768,0,0,1-2.5-2.5l9.541-9.541A2.643,2.643,0,0,1,12,10.416Z />
-                           <path d=M12,.25a2.643,2.643,0,0,1,1.875.775l9.541,9.541a1.768,1.768,0,0,1-2.5,2.5L12.177,4.327a.25.25,0,0,0-.354,0L3.084,13.066a1.768,1.768,0,0,1-2.5-2.5l9.541-9.541A2.643,2.643,0,0,1,12,.25Z />
+    <!-- Footer -->
+    <footer class="bg-secondary-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="assets/images/logo-azul.png" alt="Sítio Paz Logo" class="h-10 w-auto">
+                        <span class="font-bold text-xl">Sítio Paz</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Local perfeito para eventos especiais, retiros e momentos de paz em Juquitiba.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-300 hover:text-white transition-colors duration-200">Início</a></li>
+                        <li><a href="#sobre" class="text-gray-300 hover:text-white transition-colors duration-200">Sobre</a></li>
+                        <li><a href="#galeria" class="text-gray-300 hover:text-white transition-colors duration-200">Galeria</a></li>
+                        <li><a href="#eventos" class="text-gray-300 hover:text-white transition-colors duration-200">Eventos</a></li>
+                        <li><a href="#contato" class="text-gray-300 hover:text-white transition-colors duration-200">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Nossos Serviços</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Casamentos</li>
+                        <li>Retiros Espirituais</li>
+                        <li>Acampamentos</li>
+                        <li>Day Use</li>
+                        <li>Confraternizações</li>
+                        <li>Batismos</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <div class="text-gray-300 text-sm mb-4 sm:mb-0">
+                    Criado com carinho por: <a href="https://linkedin.com/in/renatoruis" class="text-primary-400 hover:text-primary-300 transition-colors duration-200">Renato Ruis</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#inicio" class="text-gray-300 hover:text-white transition-colors duration-200" title="Voltar ao topo">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
                         </svg>
                      </a>
-                  </div>
-                  <div class=col-auto><span>Deus é Fiel</span></div>
+                    <span class="text-gray-400 text-sm">Deus é Fiel</span>
                </div>
             </div>
          </div>
       </footer>
-      <div class=pswp tabindex=-1 role=dialog aria-hidden=true>
-         <div class=pswp__bg></div>
-         <div class=pswp__scroll-wrap>
-            <div class=pswp__container>
-               <div class=pswp__item></div>
-               <div class=pswp__item></div>
-               <div class=pswp__item></div>
-            </div>
-            <div class="pswp__ui pswp__ui--hidden">
-               <div class=pswp__top-bar>
-                  <div class=pswp__counter></div>
-                  <button class="pswp__button pswp__button--close" title="Close (Esc)"><span class=sr-only>Close</span></button> <button class="pswp__button pswp__button--share"><span class=sr-only>Share</span></button> <button class="pswp__button pswp__button--fs"><span class=sr-only>Toggle fullscreen</span></button> <button class="pswp__button pswp__button--zoom"><span class=sr-only>Zoom in/out</span></button> <button class="pswp__button pswp__button--playpause"><span class=sr-only>Play/pause</span></button>
-                  <div class=pswp__preloader>
-                     <div class=pswp__preloader__icn>
-                        <div class=pswp__preloader__cut>
-                           <div class=pswp__preloader__donut></div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition-colors duration-200 z-10">
+                &times;
+            </button>
+            <img id="modalImage" src="" alt="Galeria" class="w-full h-auto rounded-lg">
                         </div>
                      </div>
-                  </div>
-               </div>
-               <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                  <div class=pswp__share-tooltip></div>
-               </div>
-               <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"><span class=sr-only>Previous</span></button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"><span class=sr-only>Next</span></button>
-               <div class=pswp__caption>
-                  <div class=pswp__caption__center></div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <script src=assets/js/theme.core.min.js></script><script src=assets/js/theme.min.js></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 10) {
+                navbar.classList.add('bg-white', 'shadow-md');
+                navbar.classList.remove('bg-white/95');
+            } else {
+                navbar.classList.remove('bg-white', 'shadow-md');
+                navbar.classList.add('bg-white/95');
+            }
+        });
+
+        // Image modal functions
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Close modal on background click
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Form submission enhancement
+        document.getElementById('220966462881061').addEventListener('submit', function(e) {
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Enviando...
+            `;
+            submitButton.disabled = true;
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
    </body>
 </html>
